@@ -19,7 +19,8 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("reviews/", include("reviews/urls.py")),
-    path("", RedirectView.as_view(url=reverse_lazy("reviews_list")))
-]
+    path("reviews/", include("reviews.urls")),
+    path("", RedirectView.as_view(url=reverse_lazy(("reviews_list"))))
+    ]
+    
 
